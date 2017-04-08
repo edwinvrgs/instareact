@@ -5,7 +5,7 @@
 ## Porque si fuese yo, también quisiera probar...
 
 ```
-git clone htts://github.com/edwinvrgs/instareact
+git clone https://github.com/edwinvrgs/instareact
 cd instareact
 yarn install
 yarn start
