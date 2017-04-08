@@ -1,9 +1,11 @@
-import React, { PropTypes } from 'react'
+import React, { Component } from 'react'
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   render () {
-
+    return (
+      <input className="search-input" placeholder="Buscar" type="text"/>
+    );
   }
 }
 
-export default searchbar;
+export default SearchBar;
