@@ -5,10 +5,10 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-icons": "^2.2.3",
     "react-router-dom": "^4.0.0"
   },
   "devDependencies": {
+    "react-icons": "^2.2.3",
     "react-scripts": "0.9.5"
   },
   "scripts": {
