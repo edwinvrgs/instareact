@@ -6,9 +6,12 @@ export default class Home extends Component {
   }
 
   render () {
-  console.log(this.props.location.hash.replace('#access_token=', ''));
+  const { match, location } = this.props;
+  
     return (
-      <main> Estamos en el component. Esto está vacío :(. Hola: {this.props.match.params.code} </main>
+      <main>
+        <p>Este es mi codigo para hacer peticiones: { new URLSearchParams(location.search).get('code') }</p>
+      </main>
     );
   }
 }
