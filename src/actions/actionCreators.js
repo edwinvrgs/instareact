@@ -1,26 +1,34 @@
+import { SET_TOKEN_ACCESS, UPDATE_SEARCH_RESULTS, UPDATE_PROFILE, APPEND_POSTS } from './constants';
+
 //Agrega el token de acceso
-export const setTokenAcess = () => {
+export const setTokenAccess = (token) => {
   return {
-    type: 'SET_TOKEN_ACCESS',
+    type: SET_TOKEN_ACCESS,
+    token
   }
 }
 
 //Actualiza los resultados de la busqueda
-export const updateSearchResults = () => {
+export const updateSearchResults = (results) => {
   return {
-    type: 'UPDATE_SEARCH_RESULTS'
+    type: UPDATE_SEARCH_RESULTS,
+    results
   }
 }
 
 //Establece el perfil actual
-export const updateProfile = () => {
+export const updateProfile = (data, media) => {
   return {
-    type: 'UPDATE_PROFILE'
+    type: UPDATE_PROFILE,
+    data,
+    media
   }
 }
 
-export const appendPosts = () => {
+//Añade mas posts
+export const appendPosts = (posts) => {
   return {
-    type: 'APPEND_POSTS'
+    type: APPEND_POSTS,
+    posts
   }
 }

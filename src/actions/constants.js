@@ -1,0 +1,5 @@
+//Constantes
+export const SET_TOKEN_ACCESS = 'SET_TOKEN_ACCESS';
+export const UPDATE_SEARCH_RESULTS = 'UPDATE_SEARCH_RESULTS';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+export const APPEND_POSTS = 'APPEND_POSTS';
