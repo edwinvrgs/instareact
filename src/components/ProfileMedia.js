@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-class Content extends Component {
+class ProfileMedia extends Component {
   render () {
     return (
       <div>Holis</div>
@@ -8,4 +8,4 @@ class Content extends Component {
   }
 }
 
-export default Content;
+export default ProfileMedia;
