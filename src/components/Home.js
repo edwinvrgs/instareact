@@ -6,8 +6,8 @@ import { setTokenAccess } from '../actions/actionCreators';
 class Home extends Component {
 
   componentDidMount() {
-    let { location } = this.props;
-    let token = location.hash.split('#access_token=')[1];
+    var { location } = this.props;
+    var token = location.hash.split('#access_token=')[1];
     //let code = new URLSearchParams(location.search).get('code'); //si fuese codigo, no token;
 
     if(token && !this.props.token)

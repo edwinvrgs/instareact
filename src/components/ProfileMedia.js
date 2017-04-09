@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 class ProfileMedia extends Component {
   render () {
     return (
-      <div>Holis</div>
+      <div>
+        <img alt="" src={this.props.data.images.thumbnail.url}></img>
+      </div>
     );
   }
 }
