@@ -2,6 +2,8 @@
 
 This project was bootstrapped :hammer: with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+And debugged with [React Dev Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/) and [Redux Dev Tools](https://github.com/zalmoxisus/redux-devtools-extension)
+
 ###### Porque si fuese yo, también quisiera probar...
 
 ```
