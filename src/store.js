@@ -1,18 +1,18 @@
 import createHistory from 'history/createBrowserHistory';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
+import thunk from 'redux-thunk';
 
 import rootReducer from './reducers/index';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 //Default data
 const defaultState = {
-  search: {
-    results: []
-  },
-  profile: {
-    data: null,
-    media: null //O posts
-  },
+  search: [],
+  profile: null,
+  posts: null,
+  fetching: false,
   token: null
 };
 
@@ -22,7 +22,7 @@ const middleware = routerMiddleware(history);
 const store = createStore(
   rootReducer,
   defaultState,
-  applyMiddleware(middleware)
+  composeEnhancers(applyMiddleware(middleware, thunk))
 );
 
 export default store;
