@@ -8,6 +8,7 @@ import Profile from './components/Profile';
 import Navbar from './components/Navbar';
 
 import store from './store';
+import { setTokenAccess } from './actions/actionCreators';
 
 const router = (
   <Provider store={store}>

@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { setTokenAccess } from '../actions/actionCreators';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     let { location } = this.props;
-    let token = new URLSearchParams(location.search).get('code');
+    let token = location.hash.split('#access_token=')[1];
+    //let code = new URLSearchParams(location.search).get('code'); //si fuese codigo, no token;
 
-    if(token)
+    if(token && !this.props.token)
       this.props.setToken(token);
   }
 
   render () {
-    let { location, token } = this.props;
-
     return (
       <main>
-        <p>Este es mi codigo para hacer peticiones: </p>
+        <p> Estamos en el main y aquí no pasa mucho</p>
       </main>
     );
   }
@@ -29,7 +26,7 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   return {
     token: state.token
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -37,7 +34,7 @@ const mapDispatchToProps = (dispatch) => {
     setToken: (token) => {
       dispatch(setTokenAccess(token));
     }
-  }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
