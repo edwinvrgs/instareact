@@ -22,21 +22,28 @@ class SearchBar extends Component {
     this.props.fetchData(url, SEARCH);
   }
 
-  render () {
-    console.log(this.props.search);
+  renderResults() {
+    if(this.props.fetching || !this.props.search.data)
+      return <div id="search" style={{display: 'none'}}> Esperate mi pana... </div>;
+
     return (
-      <div>
+      <div id="search" style={{display: 'none'}}>
+         { this.props.search.data.map((item) => <ResultCard key={item.id} data={item}/>) }
+      </div>
+    );
+  }
+
+  render () {
+    return (
+      <div onFocus={this.onFocusInOut.bind(this)}
+        onBlur={this.onFocusInOut.bind(this)}>
         <input
-          onFocus={this.onFocusInOut.bind(this)}
-          onBlur={this.onFocusInOut.bind(this)}
           className="search-input"
           placeholder="Buscar"
           type="text"
-          onChange={this.onChange.bind(this)}/>
-
-        <div id="search" style={{display: 'none'}}>
-           { 'Espere tantico mientras buscamos' || this.props.search.map((item) => <ResultCard key={item.id} data={item}/>) }
-        </div>
+          onChange={this.onChange.bind(this)}
+          />
+        { this.renderResults() }
       </div>
     );
   }

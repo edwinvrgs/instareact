@@ -23,7 +23,7 @@ const Navbar = () => (
         <div className="icons-section">
           <NavLink activeClassName='active' className="icon" to='/profile'><FaCompass /></NavLink>
           <NavLink activeClassName='active' className="icon" to='/profile'><FaHeart /></NavLink>
-          <a className="icon" href='https://api.instagram.com/oauth/authorize/?client_id=acdb62c4d44e4582abdec8ac0c69675d&redirect_uri=http://localhost:3000/&response_type=token'><FaUser /></a>
+          <a className="icon" href='https://api.instagram.com/oauth/authorize/?client_id=acdb62c4d44e4582abdec8ac0c69675d&redirect_uri=http://localhost:3000/&response_type=token&scope=public_content'><FaUser /></a>
         </div>
       </div>
     </div>
