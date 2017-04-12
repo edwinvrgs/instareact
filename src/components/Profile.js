@@ -13,14 +13,12 @@ class Profile extends Component {
     this.getData();
   }
 
-  componentDidUpdate() {
-    this.getData();
-  }
-
+/*
   shouldComponentUpdate(nextProps) {
     console.log(nextProps.match.url !== this.props.match.url || !this.props.match.params.id);
     return nextProps.match.url !== this.props.match.url || !this.props.match.params.id;
   }
+*/
 
   getData() {
     var id = 'self';

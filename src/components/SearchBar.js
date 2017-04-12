@@ -30,7 +30,7 @@ class SearchBar extends Component {
 
     return (
       <div onBlur={() => this.showComponent('search', false)} id="search" style={{display: 'none'}}>
-         { this.props.search.data.map((item) => <ResultCard key={item.id} data={item}/>) }
+         { this.props.search.data.map((item) => <ResultCard key={item.id} data={item} fetchData={this.props.fetchData} token={this.props.token} />) }
       </div>
     );
   }
