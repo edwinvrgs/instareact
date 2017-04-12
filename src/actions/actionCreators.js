@@ -81,6 +81,7 @@ export function fetchData(url, type, append = false) {
           default:
             return {};
         }
-      });
+      })
+      .catch((error) => console.error(error));
   };
 }

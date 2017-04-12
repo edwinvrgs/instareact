@@ -16,7 +16,7 @@ const router = (
       <div>
         <Navbar />
         <Route exact path="/" component={Home} />
-        <Route path="/profile" component={Profile} />
+        <Route path="/profile/:id?" component={Profile} />
       </div>
     </Router>
   </Provider>

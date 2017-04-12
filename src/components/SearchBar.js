@@ -7,15 +7,17 @@ import { SEARCH } from '../actions/constants';
 
 class SearchBar extends Component {
 
-  onFocusInOut(event) {
-     var e = document.getElementById('search');
-     if(e.style.display === 'block')
+  showComponent(id, show) {
+     var e = document.getElementById(id);
+     if(!show)
         e.style.display = 'none';
      else
         e.style.display = 'block';
   }
 
   onChange(e) {
+    this.showComponent('search', true);
+
     var user = e.target.value;
     var url = 'https://api.instagram.com/v1/users/search?scope=public_content&q='+ user +'&access_token=' + this.props.token;
 
@@ -27,7 +29,7 @@ class SearchBar extends Component {
       return <div id="search" style={{display: 'none'}}> Esperate mi pana... </div>;
 
     return (
-      <div id="search" style={{display: 'none'}}>
+      <div onBlur={() => this.showComponent('search', false)} id="search" style={{display: 'none'}}>
          { this.props.search.data.map((item) => <ResultCard key={item.id} data={item}/>) }
       </div>
     );
@@ -35,8 +37,7 @@ class SearchBar extends Component {
 
   render () {
     return (
-      <div onFocus={this.onFocusInOut.bind(this)}
-        onBlur={this.onFocusInOut.bind(this)}>
+      <div>
         <input
           className="search-input"
           placeholder="Buscar"
