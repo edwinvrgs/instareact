@@ -12,7 +12,9 @@ class ResultCard extends Component {
     url = 'https://api.instagram.com/v1/users/'+ this.props.data.id +'/media/recent/?access_token=' + this.props.token;
     this.props.fetchData(url, MEDIA);
 
-    <Redirect to={'/profile/' + this.props.id}/>
+    var to = '/profile/' + this.props.data.id;
+
+    <Redirect to={to}/>
   }
 
   render () {

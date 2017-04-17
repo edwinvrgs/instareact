@@ -8,7 +8,7 @@ class Home extends Component {
   componentDidMount() {
     var { location } = this.props;
     var token = location.hash.split('#access_token=')[1];
-    //let code = new URLSearchParams(location.search).get('code'); //si fuese codigo, no token;
+    //let code = new URLSearchParams(location.search).get('code'); //for code, no token;
 
     if(token && !this.props.token)
       this.props.setToken(token);

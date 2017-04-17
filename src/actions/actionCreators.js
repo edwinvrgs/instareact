@@ -2,7 +2,7 @@ import { SET_TOKEN_ACCESS, UPDATE_SEARCH_RESULTS, UPDATE_PROFILE, UPDATE_MEDIA, 
 
 import fetchJsonp from 'fetch-jsonp';
 
-//Agrega el token de acceso
+//Add access token
 export const setTokenAccess = (token) => {
   return {
     type: SET_TOKEN_ACCESS,
@@ -10,7 +10,7 @@ export const setTokenAccess = (token) => {
   }
 }
 
-//Actualiza los resultados de la busqueda
+//Update de search results
 export const updateSearchResults = (results) => {
   return {
     type: UPDATE_SEARCH_RESULTS,
@@ -18,7 +18,7 @@ export const updateSearchResults = (results) => {
   }
 }
 
-//Establece el perfil actual
+//Update the actual profile
 export const updateProfile = (data, media) => {
   return {
     type: UPDATE_PROFILE,
@@ -26,7 +26,7 @@ export const updateProfile = (data, media) => {
   }
 }
 
-//Establece los posts recientes
+//Update the posts from actual profile
 export const updateMedia = (data) => {
   return {
     type: UPDATE_MEDIA,
@@ -34,7 +34,7 @@ export const updateMedia = (data) => {
   }
 }
 
-//Añade mas posts
+//Add more posts
 export const appendPosts = (data) => {
   return {
     type: APPEND_POSTS,
@@ -42,13 +42,14 @@ export const appendPosts = (data) => {
   }
 }
 
-//Me dice si estoy o no trayendo data
+//Tells me if data it's fetching
 export const fetchingData = () => {
   return {
     type: FETCHING_DATA,
   }
 }
 
+//Fetch the data [url: the endpoint - type: the type of data to fetch - append: if data is posts, this tells me if append or not]
 export function fetchData(url, type, append = false) {
 
   return (dispatch) => {
